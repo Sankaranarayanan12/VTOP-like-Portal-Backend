@@ -1,10 +1,8 @@
 from django.urls import path
-from .views import StudentOnlyTestView,FacultySubjectDetailView
-from .views import AdminCreateUserView,FacultyViewGrades,SubjectRegistrationView,StudentTimetableView,Faculty_view_enrolled_students,FacultyAddMarksView,StudentMarksView,StudentRevaluationRequestView,AdminRevaluationApprovalView,FacultyMarkAttendanceView,StudentAttendanceView,ParentAttendanceView,FacultyUploadContentView,StudentCourseContentView,AdminCalculateGradesView,ParentTimetableView,ParentMarksView,FacultyUpdateContentView
+from .views import FacultySubjectDetailView,AdminCreateUserView,FacultyViewGrades,SubjectRegistrationView,StudentTimetableView,Faculty_view_enrolled_students,FacultyAddMarksView,StudentMarksView,StudentRevaluationRequestView,AdminRevaluationApprovalView,FacultyMarkAttendanceView,StudentAttendanceView,ParentAttendanceView,FacultyUploadContentView,StudentCourseContentView,AdminCalculateGradesView,ParentTimetableView,ParentMarksView,FacultyUpdateContentView
 
 urlpatterns = [
     path('admin/create-user/', AdminCreateUserView.as_view(), name='admin-create-user'),
-    path('student-test/', StudentOnlyTestView.as_view(), name='student-test'),
      path('subjects/register/<int:subject_id>/',SubjectRegistrationView.as_view(),name='student-subject-register'),
      path('student/timetable/',StudentTimetableView.as_view(),name='student-timetable'),
      path('faculty/subject/<int:subject_id>/students/',Faculty_view_enrolled_students.as_view(), name='faculty-subject-students'),
